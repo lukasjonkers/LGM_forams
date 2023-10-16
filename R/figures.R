@@ -1018,7 +1018,7 @@ latTrec_globalAF <- LGM_globalAF %>%
   geom_line(data = latRangeData, aes(x, y), linetype = "dashed") +
   geom_smooth(data = lat_noAF,
               orientation = "y", colour = "red", fill = "pink", se = TRUE, method = "gam") +
-  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam") +
+  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam", alpha = .5, lineend = "round", linewidth = 0.7) +
   labs(x = expression("Temperature anomaly ["*degree*"C]")) +
   labs(x = NULL) +
   coord_cartesian(xlim = xlimRec, ylim = latRangeMap$y) +
@@ -1065,7 +1065,7 @@ latDifMod_globalAF <- LGM_globalAF %>%
   geom_line(data = latRangeData, aes(x, y), linetype = "dashed") +
   geom_smooth(data = lat_noAF,
               orientation = "y", colour = "red", fill = "pink", se = TRUE, method = "gam") +
-  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam") +
+  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam", alpha = .5, lineend = "round", linewidth = 0.7) +
   labs(x = expression("Temperature anomaly ["*degree*"C]")) +
   labs(x = NULL) +
   coord_cartesian(xlim = xlimDif, ylim = latRangeMap$y) +
@@ -1118,7 +1118,7 @@ latTrec_regionalAF <- LGM_regionalAF %>%
   geom_line(data = latRangeData, aes(x, y), linetype = "dashed") +
   geom_smooth(data = lat_noAF,
               orientation = "y", colour = "red", fill = "pink", se = TRUE, method = "gam") +
-  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam") +
+  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam", alpha = .5, lineend = "round", linewidth = 0.7) +
   labs(x = expression("Temperature anomaly ["*degree*"C]")) +
   labs(x = NULL) +
   coord_cartesian(xlim = xlimRec, ylim = latRangeMap$y) +
@@ -1162,7 +1162,7 @@ latDifMod_regionalAF <- LGM_regionalAF %>%
   geom_line(data = latRangeData, aes(x, y), linetype = "dashed") +
   geom_smooth(data = lat_noAF,
               orientation = "y", colour = "red", fill = "pink", se = TRUE, method = "gam") +
-  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam") +
+  geom_smooth(orientation = "y", colour = "black", fill = "grey60", method = "gam", alpha = .5, lineend = "round", linewidth = 0.7) +
   labs(x = expression("Temperature anomaly ["*degree*"C]")) +
   labs(x = NULL) +
   coord_cartesian(xlim = xlimDif, ylim = latRangeMap$y) +
@@ -1180,6 +1180,6 @@ plotRec_regionalAF <- mapTrec_regionalAF + latTrec_regionalAF +
 # plot of affect of analogue filtering
 ExtF10 <- plotRecAll / plotRec_globalAF / plotRec_regionalAF
 
-ggsave("out/Ext_Fig10.eps", plot = ExtF10,  units = "mm", width = 183, height = 120)
+ggsave("out/Ext_Fig10.tiff", plot = ExtF10,  units = "mm", width = 183, height = 120)
 
 # ===============================================================================================
